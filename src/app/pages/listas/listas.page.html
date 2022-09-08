@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button text="volver" mode="ios" defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+  <ion-toolbar color="dark">
+    <ion-title>Listas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngFor="let item of ['Isaac','Paulo','Ivan','Cony']" >
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="/assets/cheems.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item}}</h2>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

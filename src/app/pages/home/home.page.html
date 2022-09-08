@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-text slot="end" >
+      <p>{{username || 'Anónimo'}}</p>
+    </ion-text>
+    <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text class="ion-text-center">
+    <h1>Bienvenido</h1>
+  </ion-text>
+</ion-content>

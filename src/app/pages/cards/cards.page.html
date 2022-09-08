@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button text="volver" mode="ios" defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+  <ion-toolbar color="dark">
+    <ion-title>Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let item of [0,0,0,0,0]" >
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Tengo prueba de Ionic</ion-card-subtitle>
+        <ion-card-title>Y me da Ansiedad</ion-card-title>
+      </ion-card-header>
+      <ion-img src="/assets/cheems.jpg"></ion-img>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+  
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button text="volver" mode="ios" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Refresher con Animaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+  
+  <ion-list *ngFor="let item of coleccion" >
+    <ion-item class="animate__animated animate__lightSpeedInRight">
+      <ion-avatar slot="start">
+        <ion-img src="{{item.imagen}}"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.nombre}}</h2>
+        <p>{{item.subtexto}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
