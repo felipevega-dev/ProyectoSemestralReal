@@ -1,12 +1,13 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>Scanner</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultrhef="/home" text="Atrás" mode="ios" ></ion-back-button>
+      <ion-back-button text="volver" mode="ios" defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-button class="ion-padding" expand="block" size="large"  (click)="showLoading()">Iniciar scanner</ion-button>
 
 </ion-content>
