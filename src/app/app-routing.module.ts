@@ -28,7 +28,11 @@ const routes: Routes = [
   {
     path: 'refresher',
     loadChildren: () => import('./pages/refresher/refresher.module').then( m => m.RefresherPageModule)
+  },  {
+    path: 'scaner',
+    loadChildren: () => import('./pages/scaner/scaner.module').then( m => m.ScanerPageModule)
   },
+
 ];
 
 @NgModule({
