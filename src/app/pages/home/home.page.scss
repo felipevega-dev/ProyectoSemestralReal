@@ -34,10 +34,6 @@ ion-item{
   background-color: var(--ion-color-azul-shade);
 }
 
-ion-content{
-  background-color: var(--ion-color-celeste);
-}
-
 ion-card{
   background-color: var(--ion-color-azul-tint);
 }
@@ -48,3 +44,7 @@ ion-card-content{
 ion-text{
   color: black;
 }
+
+ion-content{ --ion-background-color:#ffffff; }
+
+
