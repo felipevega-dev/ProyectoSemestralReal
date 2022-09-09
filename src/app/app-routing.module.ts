@@ -18,17 +18,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/loginpage/loginpage.module').then( m => m.LoginpagePageModule)
   },
   {
-    path: 'cards',
-    loadChildren: () => import('./pages/cards/cards.module').then( m => m.CardsPageModule)
-  },
-  {
     path: 'listas',
     loadChildren: () => import('./pages/listas/listas.module').then( m => m.ListasPageModule)
   },
   {
     path: 'refresher',
     loadChildren: () => import('./pages/refresher/refresher.module').then( m => m.RefresherPageModule)
-  },  {
+  },
+  {
     path: 'scaner',
     loadChildren: () => import('./pages/scaner/scaner.module').then( m => m.ScanerPageModule)
   },

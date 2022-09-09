@@ -1,32 +1,43 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="azul">
     <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
     <ion-title>
       Inicio
     </ion-title>
-    <ion-text slot="end" >
-      <p>{{username || 'Anónimo'}}</p>
+    <ion-text slot="end" (click)="verPerfil()" >
+      <p>{{username  || 'Anónimo'}}</p>
     </ion-text>
     <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-text class="ion-text-center">
-    <h1>Bienvenido {{username || 'Anónimo'}} !</h1>
+  <ion-text class="ion-text-center" color="black">
+    <h1>Bienvenido {{username || 'Anónimo'}}</h1>
   </ion-text>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>DUOC UC</ion-card-subtitle>
+      <ion-card-title>Alumnos realizan evento para celebrar los demás eventos</ion-card-title>
+    </ion-card-header>
+    <ion-img src="/assets/cueca.jpg"></ion-img>
+    <ion-card-content color="white">
+      La increible cantidad de eventos realizados en duocuc ha motivado a algunos alumnos a 
+      organizar un evento dedicado a la celebración de todos los demás eventos, increible.
+    </ion-card-content>
+  </ion-card>
 
-  <ion-item *ngFor="let item of [0,0,0]" >
-    <ion-card>
-      <ion-card-header>
-        <ion-card-subtitle>DUOC UC</ion-card-subtitle>
-        <ion-card-title>60% de los alumnos reprueban su primer semestre</ion-card-title>
-      </ion-card-header>
-      <ion-img src="/assets/duocgris.jpg"></ion-img>
-      <ion-card-content>
-        Una encuesta realizada el pasado 20 de agosto del presente año, resolvió que son más de el 60%
-        de los alumnos de la institución que reprueban su primer semestre.
-      </ion-card-content>
-    </ion-card>
-  </ion-item>
+  <ion-card >
+    <ion-card-header>
+      <ion-card-subtitle>DUOC UC</ion-card-subtitle>
+      <ion-card-title>60% de los alumnos reprueban su primer semestre</ion-card-title>
+    </ion-card-header>
+    <ion-img src="/assets/duocgris.jpg"></ion-img>
+    <ion-card-content>
+      Una encuesta realizada el pasado 20 de agosto del presente año, resolvió que son más de el 60%
+      de los alumnos de la institución que reprueban su primer semestre.
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

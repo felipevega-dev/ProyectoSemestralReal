@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="azul">
     <ion-title>Login</ion-title>
   </ion-toolbar>
   
@@ -11,15 +11,15 @@
     <h1 class="animate__animated animate__fadeInDownBig">iniciar sesión</h1>
   </ion-text>
   <form #frm="ngForm" (ngSubmit)="onSubmit()">
-    <ion-item>
+    <ion-item color="azul">
       <ion-label position="floating">Usuario</ion-label>
       <ion-input required type="text" name="username" [(ngModel)]="usuario.username" clearInput></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item color="celeste">
       <ion-label position="floating">Password</ion-label>
       <ion-input required type="password" name="password" [(ngModel)]="usuario.password" clearInput></ion-input>
     </ion-item>
-    <ion-button expand="block" color="primary" type="submit" [disabled]="frm.invalid" class="ion-margin-top">
+    <ion-button expand="block" color="warning" type="submit" [disabled]="frm.invalid" class="ion-margin-top">
       Login
     </ion-button>
   </form>

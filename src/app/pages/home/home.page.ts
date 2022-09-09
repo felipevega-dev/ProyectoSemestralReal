@@ -34,4 +34,8 @@ username:string='';
     this.menu.open('first');
   }
 
+  verPerfil(){
+    
+  }
+
 }
