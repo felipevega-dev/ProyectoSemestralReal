@@ -9,7 +9,7 @@
 
 <ion-content class="ion-padding" color="light">
   <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Programación Web','Arquitectura','Calidad de Software','Inglés Intermedio','Programación de base de datos','Estadística Descriptiva','Proceso de Portafolio']" >
-    <ion-item>
+    <ion-item (click)="showLoading()">
       <ion-avatar slot="start">
         <img src="/assets/book.png" />
       </ion-avatar>
