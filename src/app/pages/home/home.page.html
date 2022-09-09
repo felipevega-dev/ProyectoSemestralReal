@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="primary">
     <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
     <ion-title>
-      Home
+      Inicio
     </ion-title>
     <ion-text slot="end" >
       <p>{{username || 'Anónimo'}}</p>
@@ -15,4 +15,18 @@
   <ion-text class="ion-text-center">
     <h1>Bienvenido {{username || 'Anónimo'}}</h1>
   </ion-text>
+
+  <ion-item *ngFor="let item of [0,0,0]" >
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>DUOC UC</ion-card-subtitle>
+        <ion-card-title>60% de los alumnos reprueban su primer semestre</ion-card-title>
+      </ion-card-header>
+      <ion-img src="/assets/duocgris.jpg"></ion-img>
+      <ion-card-content>
+        Una encuesta realizada el pasado 20 de agosto del presente año, resolvió que son más de el 60%
+        de los alumnos de la institución que reprueban su primer semestre.
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
 </ion-content>
