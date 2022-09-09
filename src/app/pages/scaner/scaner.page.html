@@ -2,15 +2,16 @@
   <ion-toolbar color="azul">
     <ion-title>Scanner</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button text="volver" mode="ios" defaultHref="/home"></ion-back-button>
+      <ion-back-button text="volver" defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item color="azul" class="ion-padding">
-    <img src="/assets/scan.png"/>
-  </ion-item>
-  <ion-button class="ion-padding" expand="block" size="large"  (click)="showLoading()">Iniciar scanner</ion-button>
 
+    <ion-item color="light "class="ion-padding">
+      <img class="animate__animated animate__jello" src="/assets/scan.png"/>
+    </ion-item>}
+  
+  <ion-button class="animate__animated animate__pulse ion-padding" expand="block" size="large"  (click)="showLoading()">Iniciar scanner</ion-button>
 </ion-content>

@@ -1,15 +1,15 @@
 <ion-header>
   <ion-toolbar color="azul">
     <ion-buttons slot="start">
-      <ion-back-button text="volver" mode="ios" defaultHref="/home"></ion-back-button>
+      <ion-back-button text="volver" defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-title>Asignaturas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding" color="celeste">
-  <ion-list *ngFor="let item of ['Programación Web','Arquitectura','Calidad de Software','Inglés Intermedio']" >
-    <ion-item color="celeste">
+<ion-content class="ion-padding" color="light">
+  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Programación Web','Arquitectura','Calidad de Software','Inglés Intermedio','Programación de base de datos','Estadística Descriptiva','Proceso de Portafolio']" >
+    <ion-item>
       <ion-avatar slot="start">
         <img src="/assets/book.png" />
       </ion-avatar>
