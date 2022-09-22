@@ -59,7 +59,7 @@ export class ContraPage implements OnInit {
       const alert = await this.alertController.create({
         header: 'Acceso Denegado',
         subHeader: '',
-        message: 'Usuario o Contraseña incorrectos',
+        message: 'Usuario o Correo incorrectos',
         buttons: [
           {
             text: 'Cancelar',
