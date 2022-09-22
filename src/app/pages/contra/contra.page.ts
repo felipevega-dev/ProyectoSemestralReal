@@ -37,7 +37,7 @@ export class ContraPage implements OnInit {
     
     onSubmit()
     {
-      if(this.usuario.username=="waco" && this.usuario.correo=="123")
+      if(this.usuario.username=="waco" && this.usuario.correo=="waco@gmail.com")
       {
         
         let navigationExtras:NavigationExtras={
