@@ -28,6 +28,10 @@ const routes: Routes = [
     path: 'qr',
     loadChildren: () => import('./pages/qr/qr.module').then( m => m.QRPageModule)
   },
+  {
+    path: 'contra',
+    loadChildren: () => import('./pages/contra/contra.module').then( m => m.ContraPageModule)
+  },
 
 
 ];
