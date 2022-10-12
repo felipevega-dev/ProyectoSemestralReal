@@ -1,6 +1,7 @@
+import { Storage } from '@ionic/storage-angular';
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/interfaces/usuario';
 
 @Component({
   selector: 'app-loginpage',
@@ -9,68 +10,44 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginpagePage implements OnInit {
 
-  usuario={
+  registrado:Usuario=null;
+  
+  usuario:Usuario={
     username:'',
-    password:''
+    password:'',
+    correo: ''
   }
 
-
-  constructor(private router:Router,private alertController:AlertController) { }
+  constructor(private router:Router, private storage:Storage) { }
 
   ngOnInit() {
   }
 
-  onSubmit()
-  {
-    if(this.usuario.username=="waco" && this.usuario.password=="123")
-    {
-      
-      let navigationExtras:NavigationExtras={
-        state:{
-          miusuario:this.usuario,
-          otracosa:'hola waldo'
-        }
-      }
-      this.router.navigate(['/home'],navigationExtras)
-
-      console.log(navigationExtras);
-    }
-    else{
-      this.presentAlert();
-      console.log("Denegado");
-    }
+  onSubmit() {
+    console.log(this.usuario);
+    this.logear();
   }
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Acceso Denegado',
-      subHeader: '',
-      message: 'Usuario o Contraseña incorrectos',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          handler: () => {
-            console.log('Alert canceled');
-          },
-        },
-        {
-          text: 'Aceptar',
-          role: 'confirm',
-          handler: () => {
-            console.log('Alert confirmed');
-          },
-        },
-      ],
-      mode:'ios',
-      backdropDismiss:false,
-      cssClass:'miclase',
-    });
+  async logear()
+  {
+    this.registrado = await this.storage.get(this.usuario.username);
 
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
-    console.log(`Dismissed with role: ${role}`);
+    if (this.registrado != null)
+    {
+      if(this.usuario.username == this.registrado.username && this.usuario.password == this.registrado.password)
+      {
+        //localStorage.setItem('ingresado','true');
+        await this.storage.set('session',this.registrado.username);
+        console.log("datos correctos, pase")
+        this.router.navigate(["/home"]);
+      }
+      else{
+        console.log("contraseña incorrecta")
+      }
+    } 
+    else{
+      console.log("usuario no registrado")
+    }
   }
 
 }

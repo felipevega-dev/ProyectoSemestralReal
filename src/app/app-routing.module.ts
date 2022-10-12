@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutorizarGuard } from './guards/autorizar.guard';
 
 const routes: Routes = [
 
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canActivate:[AutorizarGuard]
   },
 
   {
@@ -24,7 +26,8 @@ const routes: Routes = [
   {
     path: 'scaner',
     loadChildren: () => import('./pages/scaner/scaner.module').then( m => m.ScanerPageModule)
-  },  {
+  },
+  {
     path: 'qr',
     loadChildren: () => import('./pages/qr/qr.module').then( m => m.QRPageModule)
   },
@@ -32,6 +35,14 @@ const routes: Routes = [
     path: 'contra',
     loadChildren: () => import('./pages/contra/contra.module').then( m => m.ContraPageModule)
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+
 
 
 ];

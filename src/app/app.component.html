@@ -20,10 +20,13 @@
           <ion-icon slot="start" name="scan-circle-outline"></ion-icon>
           Scanner
         </ion-item>
+        <ion-item color="celeste" detail routerLink="/loginpage" (click)="cerrarMenu()" (click)="cerrarSesion()">
+          <ion-icon slot="start" name="log-out-outline"></ion-icon>
+          Cerrar Sesión
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
-
 
   <ion-router-outlet id="main"></ion-router-outlet>
 

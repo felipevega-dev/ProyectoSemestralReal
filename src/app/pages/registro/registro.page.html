@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-back-button text="volver" mode="ios" slot="start" defaultHref="/login"></ion-back-button>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="primary">
+    <h4> Ingresa tus datos</h4>
+  </ion-text>
+
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input required type="text" name="usrname" [(ngModel)]="usuario.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input required type="password" name="pass" [(ngModel)]="usuario.password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo Electronico</ion-label>
+      <ion-input required type="email" name="mail" [(ngModel)]="usuario.correo"></ion-input>
+    </ion-item>
+    <ion-button expand="full" color="success" type="submit" [disabled]="form.invalid" class="ion-margin-top">
+      Registrarse
+    </ion-button>
+  </form>
+</ion-content>

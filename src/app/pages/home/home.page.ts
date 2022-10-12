@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { Usuario } from '../../interfaces/usuario';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-home',
@@ -9,33 +11,34 @@ import { MenuController } from '@ionic/angular';
 })
 export class HomePage {
 
-username:string='';
+  registrado:Usuario=null;
+  
+  usuario:Usuario={
+    username:'',
+    password:'',
+    correo: ''
+  }
 
   constructor(
-    private router:Router,
-    private activatedRouter:ActivatedRoute,
+    private router:Router,public storage:Storage,
     private menu:MenuController
-  ) {
-
-    this.activatedRouter.queryParams.subscribe(params=>{
-      if(this.router.getCurrentNavigation().extras.state){
-
-        let usuario=this.router.getCurrentNavigation().extras.state.miusuario;
-        console.log("Llego el state: " + usuario.username);
-        this.username=usuario.username;
-      }
-      
-    })
-
-
-  }
+  ) { }
 
   verMenu(){
     this.menu.open('first');
   }
 
+  cerrarSesion(){
+    this.logout();
+    this.router.navigate(["/login"]);
+  }
+
+  async logout(){
+    await this.storage.set('session',null);
+  }
+
   verPerfil(){
-    
+    this.router.navigate(["/perfil"]);
   }
 
 }

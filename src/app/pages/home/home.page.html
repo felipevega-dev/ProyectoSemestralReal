@@ -5,7 +5,7 @@
       Inicio
     </ion-title>
     <ion-text slot="end" (click)="verPerfil()" >
-      <p>{{username  || 'Anónimo'}}</p>
+      <p>Vega</p>
     </ion-text>
     <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
   </ion-toolbar>
@@ -13,7 +13,7 @@
 
 <ion-content color="fondohome">
   <ion-text class="ion-text-center" color="black">
-    <h1 class="animate__animated animate__pulse">Bienvenido {{username || 'Anónimo'}}</h1>
+    <h1 class="animate__animated animate__pulse">Bienvenido: Vega {{usuario.username}}</h1>
   </ion-text>
   
   <ion-card class="animate__animated animate__fadeInLeft">

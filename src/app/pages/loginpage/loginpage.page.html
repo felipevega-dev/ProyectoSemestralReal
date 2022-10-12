@@ -1,31 +1,29 @@
 <ion-header>
-  <ion-toolbar color="azul">
+  <ion-toolbar color="dark">
+    <ion-icon slot="start" name="person" size="large" class="ion-padding"></ion-icon>
     <ion-title>Login</ion-title>
   </ion-toolbar>
-  
 </ion-header>
 
-<ion-content color="light" class="ion-padding">
-
-  <ion-text color="tertiary" class="ion-text-center ion-text-capitalize">
-    <h1 class="animate__animated animate__fadeInDownBig">iniciar sesión</h1>
+<ion-content class="ion-padding">
+  <ion-text color="primary">
+    <h4> Inicio de Sesión</h4>
   </ion-text>
-  <form #frm="ngForm" (ngSubmit)="onSubmit()">
+
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input required type="text" name="username" [(ngModel)]="usuario.username" clearInput></ion-input>
+      <ion-input required type="text" name="nombre" [(ngModel)]="usuario.username" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Password</ion-label>
-      <ion-input required type="password" name="password" [(ngModel)]="usuario.password" clearInput></ion-input>
+      <ion-input required type="password" name="pass" [(ngModel)]="usuario.password"></ion-input>
     </ion-item>
-    <ion-button expand="block" color="warning" type="submit" [disabled]="frm.invalid" class="ion-margin-top">
+    <ion-button expand="full" color="primary" type="submit" [disabled]="form.invalid" class="ion-margin-top">
       Login
     </ion-button>
   </form>
- 
+  <ion-text color="primary" class="ion-text-center" routerLink="/registro">
+    <p>Crear Cuenta</p>
+  </ion-text>
 </ion-content>
-
-<ion-footer color="azul">
-  <ion-button color="warning" class="text-align" detail routerLink="/contra">¿Olvidaste tu contraseña?</ion-button>
-</ion-footer>

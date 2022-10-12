@@ -25,6 +25,7 @@
     "@capacitor/keyboard": "4.0.1",
     "@capacitor/status-bar": "4.0.1",
     "@ionic/angular": "^6.1.9",
+    "@ionic/storage-angular": "^3.0.6",
     "animate.css": "^4.1.1",
     "ionicons": "^6.0.3",
     "rxjs": "~6.6.0",
