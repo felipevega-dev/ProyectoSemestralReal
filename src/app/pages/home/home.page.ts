@@ -11,6 +11,7 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class HomePage {
 
+  
   registrado:Usuario=null;
   
   usuario:Usuario={
@@ -26,6 +27,8 @@ export class HomePage {
 
   verMenu(){
     this.menu.open('first');
+
+
   }
 
   cerrarSesion(){
@@ -47,6 +50,19 @@ export class HomePage {
 
   verNoticia2(){
     this.router.navigate(["/noticia2"]);
+  }
+
+  ngOnInit() {
+    console.log(this.usuario)
+    this.logear()
+    
+    
+    
+  }
+
+  async logear()
+  {
+    this.registrado = await this.storage.get(this.usuario.username);
   }
 
 }
