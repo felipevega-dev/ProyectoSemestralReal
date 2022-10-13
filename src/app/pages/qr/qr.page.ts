@@ -11,5 +11,4 @@ export class QRPage implements OnInit {
 
   ngOnInit() {
   }
-
 }

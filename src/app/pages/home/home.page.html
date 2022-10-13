@@ -5,7 +5,7 @@
       Inicio
     </ion-title>
     <ion-text slot="end" (click)="verPerfil()" >
-      <p>Vega</p>
+      <h2>Vega</h2>
     </ion-text>
     <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
   </ion-toolbar>
@@ -13,27 +13,27 @@
 
 <ion-content color="fondohome">
   <ion-text class="ion-text-center" color="black">
-    <h1 class="animate__animated animate__pulse">Bienvenido: Vega {{usuario.username}}</h1>
+    <h1 class="animate__animated animate__pulse azul">Bienvenido: Vega</h1>
   </ion-text>
   
-  <ion-card class="animate__animated animate__fadeInLeft">
+  <ion-card class="animate__animated animate__fadeInLeft " >
     <ion-card-header>
       <ion-card-subtitle>DUOC UC</ion-card-subtitle>
       <ion-card-title>Alumnos realizan evento para celebrar los demás eventos</ion-card-title>
     </ion-card-header>
-    <ion-img src="/assets/cueca.jpg"></ion-img>
+    <ion-img src="/assets/cueca.jpg" (click)="verNoticia1()"></ion-img>
     <ion-card-content color="white">
       La increible cantidad de eventos realizados en duocuc ha motivado a algunos alumnos a 
       organizar un evento dedicado a la celebración de todos los demás eventos, increible.
     </ion-card-content>
   </ion-card>
 
-  <ion-card >
+  <ion-card class="animate__animated animate__fadeInLeft">
     <ion-card-header>
       <ion-card-subtitle>DUOC UC</ion-card-subtitle>
       <ion-card-title>60% de los alumnos reprueban su primer semestre</ion-card-title>
     </ion-card-header>
-    <ion-img src="/assets/duocgris.jpg"></ion-img>
+    <ion-img src="/assets/duocgris.jpg" (click)="verNoticia2()"></ion-img>
     <ion-card-content>
       Una encuesta realizada el pasado 20 de agosto del presente año, resolvió que son más de el 60%
       de los alumnos de la institución que reprueban su primer semestre.

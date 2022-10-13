@@ -41,4 +41,12 @@ export class HomePage {
     this.router.navigate(["/perfil"]);
   }
 
+  verNoticia1(){
+    this.router.navigate(["/noticia1"]);
+  }
+
+  verNoticia2(){
+    this.router.navigate(["/noticia2"]);
+  }
+
 }

@@ -42,6 +42,14 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
+  {
+    path: 'noticia1',
+    loadChildren: () => import('./pages/noticias/noticia1/noticia1.module').then( m => m.Noticia1PageModule)
+  },
+  {
+    path: 'noticia2',
+    loadChildren: () => import('./pages/noticias/noticia2/noticia2.module').then( m => m.Noticia2PageModule)
+  },
 
 
 

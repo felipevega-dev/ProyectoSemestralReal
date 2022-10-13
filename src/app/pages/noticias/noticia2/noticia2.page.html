@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
+    <ion-title>
+      Inicio
+    </ion-title>
+    <ion-text slot="end" (click)="verPerfil()" >
+      <h2>Vega</h2>
+    </ion-text>
+    <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">  
+  <ion-back-button defaultHref="/home" color="primary"></ion-back-button>
+    <ion-card class="animate__animated animate__fadeInLeft">
+      <ion-card-header>
+        <ion-card-subtitle class="ion-no-padding">12/10/2022</ion-card-subtitle>
+        <ion-card-title>60% de los alumnos reprueban su primer semestre</ion-card-title>
+      </ion-card-header>
+      <ion-img src="/assets/duocgris.jpg"></ion-img>
+      <ion-card-content color="white">
+        Una encuesta realizada el pasado 20 de agosto del presente año, resolvió que son más de el 60%
+        de los alumnos de la institución que reprueban su primer semestre.
+
+        Un preocupante analisís estadistico ha revelado que el rendimiento de los alumnos de la institución duoc uc es bastante
+        endendle en el primer año, se cree que esto se debe a la inexperiencia de la mayoria de los alumnos en el ambiente educacional superior
+        por lo que suelen tomarse su primer año a la ligera.
+
+        ¿Que tan en serio te tomas el año tú?
+      </ion-card-content>
+    </ion-card>
+</ion-content>

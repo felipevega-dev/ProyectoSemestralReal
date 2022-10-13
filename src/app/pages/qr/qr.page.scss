@@ -9,6 +9,27 @@
   }
   
   
-  ion-item{ --ion-background-color:#ffffff;}
+  ion-item{ --ion-background-color:#101273;}
   ion-content{ --ion-background-color:#ffffff; }
   
+
+  div{
+    color: black;
+    text-align: center;
+    font-size: large;
+  }
+
+  .bold{
+    font-weight: bold;
+  }
+
+  .suc{
+    color: green;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .den{
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+

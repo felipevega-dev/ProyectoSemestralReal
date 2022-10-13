@@ -18,4 +18,5 @@ export class PerfilPage implements OnInit {
   verMenu(){
     this.menu.open('first');
   }
+  
 }
