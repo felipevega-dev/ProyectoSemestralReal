@@ -9,14 +9,37 @@
 </ion-header>
 
 <ion-content>
-<ion-card>
-  <ion-card-content>
-    <ion-card-title>
-      PERFIL DE USUARIO
-    </ion-card-title>
-    <br>
-    <ion-card-subtitle>Datos:</ion-card-subtitle>
-    
-  </ion-card-content>
-</ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        PERFIL DE USUARIO
+      </ion-card-title>
+      <ion-card-subtitle>Datos Personales</ion-card-subtitle>
+      <h2>Nombre: Felipe Vega Carlos</h2>
+      <h2>Sede: San Andrés de Concepción</h2>
+      <p>----------------------------------------------------------</p>
+      <h2>Correo: feli.vega@duocuc.cl</h2>
+      <h2>Contraseña: **********</h2>
+      <ion-button>Cambiar Contraseña</ion-button>
+      <p>----------------------------------------------------------</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        ASIGNATURAS
+      </ion-card-title>
+      <ion-list
+        *ngFor="let item of ['Programación Web','Arquitectura','Calidad de Software','Inglés Intermedio','Programación de base de datos','Estadística Descriptiva','Proceso de Portafolio']">
+        <ion-item (click)="showLoading()">
+          <ion-avatar slot="start">
+            <img src="/assets/book.png" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{item}}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
