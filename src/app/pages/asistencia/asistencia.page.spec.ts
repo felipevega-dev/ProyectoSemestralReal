@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { QRPage } from './qr.page';
+import { AsistenciaPage } from './asistencia.page';
 
-describe('QRPage', () => {
-  let component: QRPage;
-  let fixture: ComponentFixture<QRPage>;
+describe('AsistenciaPage', () => {
+  let component: AsistenciaPage;
+  let fixture: ComponentFixture<AsistenciaPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ QRPage ],
+      declarations: [ AsistenciaPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(QRPage);
+    fixture = TestBed.createComponent(AsistenciaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

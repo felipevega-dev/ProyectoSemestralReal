@@ -28,17 +28,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/scaner/scaner.module').then( m => m.ScanerPageModule)
   },
   {
-    path: 'qr',
-    loadChildren: () => import('./pages/qr/qr.module').then( m => m.QRPageModule)
-  },
-  {
     path: 'contra',
     loadChildren: () => import('./pages/contra/contra.module').then( m => m.ContraPageModule)
   },
   {
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
-  },  {
+  },
+  {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   },
@@ -49,6 +46,10 @@ const routes: Routes = [
   {
     path: 'noticia2',
     loadChildren: () => import('./pages/noticias/noticia2/noticia2.module').then( m => m.Noticia2PageModule)
+  },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
   },
 
 
