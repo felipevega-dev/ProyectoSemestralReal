@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AsistenciaService } from '../../services/asistencia.service';  
+
+import { Asistencia } from '../../models/asistencias';
+
 @Component({
   selector: 'app-asistencia-list',
   templateUrl: './asistencia-list.component.html',
@@ -7,8 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsistenciaListComponent implements OnInit {
 
-  constructor() { }
+  asistencias: Asistencia[];
+  constructor(
+    public asistenciaService: AsistenciaService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.asistencias = this.asistenciaService.getAsistencias();
+  }
 
 }

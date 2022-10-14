@@ -10,11 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentsModule } from './components/components.module';
 
+import { AsistenciaService } from './services/asistencia.service';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
     HttpClientModule, IonicStorageModule.forRoot(), ComponentsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [AsistenciaService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }] ,
   bootstrap: [AppComponent],
 })
 export class AppModule {}

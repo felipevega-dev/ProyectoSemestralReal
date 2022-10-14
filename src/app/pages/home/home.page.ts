@@ -11,7 +11,6 @@ import { LoginpagePage } from '../loginpage/loginpage.page';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  usuarioS = LoginpagePage.Susuario;
 
   nombre:String='';
   registrado: Usuario = null;
@@ -56,8 +55,7 @@ export class HomePage {
   
   ngOnInit() {
     this.verUsuario();
-    console.log(this.usuario)
-    console.log(this.usuarioS);
+    console.log(this.usuario);
   }
 
   async logear() {
