@@ -7,25 +7,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [style.visibiluty]="content_visibility" class="ion-padding">
-  <ion-item *ngIf="scanResult">
-    <ion-label class="ion-text-wrap">Resultado de Scanner: {{scanResult}} </ion-label>
-  </ion-item>
-  <ion-card class="ion-text-center">
-    <ion-card-content>
-      <qrcode [qrdata]="'qrString'" [width]="300" 
-      [errorCorrectionLevel]="'M'">
-      </qrcode>
-    </ion-card-content>
-  </ion-card>
-  <ion-button expand="block" class="ion-margin" (click)="startScan()">
-    Scannear QR y Marcar Asistencia
-  </ion-button>
-  <div class="ion-padding ion-text-center">
-  <ion-text color="warning"><ion-icon name="warning"></ion-icon></ion-text><ion-text color="primary "class="ion-padding ion-text-uppercase"><h2>Escanea el codigo para marcar asistencia</h2></ion-text>
-  </div>
+<ion-content class="ion-padding">
+  
+  <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
-
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+  
+ 
   <ion-grid>
     <ion-row>
       <ion-col>

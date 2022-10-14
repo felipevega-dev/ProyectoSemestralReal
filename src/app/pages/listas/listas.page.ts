@@ -16,8 +16,8 @@ export class ListasPage implements OnInit {
 
   async showLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Generando codigo QR Espere 2 segundos...',
-      duration: 2000,
+      message: 'Cargando asistencias',
+      duration: 1300,
     
     });
     let navigationExtras:NavigationExtras={

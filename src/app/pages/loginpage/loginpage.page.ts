@@ -9,7 +9,8 @@ import { Usuario } from 'src/app/interfaces/usuario';
   styleUrls: ['./loginpage.page.scss'],
 })
 export class LoginpagePage implements OnInit {
-
+  
+  
   registrado:Usuario=null;
   
   usuario:Usuario={
@@ -18,6 +19,7 @@ export class LoginpagePage implements OnInit {
     correo: ''
   }
 
+  static Susuario;
   constructor(private router:Router, private storage:Storage) { }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class LoginpagePage implements OnInit {
   onSubmit() {
     console.log(this.usuario);
     this.logear();
+
   }
 
   async logear()
@@ -40,6 +43,7 @@ export class LoginpagePage implements OnInit {
         await this.storage.set('session',this.registrado.username);
         console.log("datos correctos, pase")
         this.router.navigate(["/home"]);
+        LoginpagePage.Susuario = this.usuario.username;
       }
       else{
         console.log("contraseña incorrecta")

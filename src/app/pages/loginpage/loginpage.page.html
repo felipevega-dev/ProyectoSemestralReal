@@ -1,29 +1,31 @@
 <ion-header>
-  <ion-toolbar color="dark">
+  <ion-toolbar color="azul">
     <ion-icon slot="start" name="person" size="large" class="ion-padding"></ion-icon>
-    <ion-title>Login</ion-title>
+    <ion-title>DUOC UC</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content color="tertiary" class="ion-padding">
   <ion-text color="primary">
-    <h4> Inicio de Sesión</h4>
+    <h4 class="bold"> Inicio de Sesión</h4>
   </ion-text>
 
-  <form #form="ngForm" (ngSubmit)="onSubmit()">
-    <ion-item>
+  <form  #form="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item color="primary">
       <ion-label position="floating">Usuario</ion-label>
       <ion-input required type="text" name="nombre" [(ngModel)]="usuario.username" ></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item color="primary">
       <ion-label position="floating">Password</ion-label>
       <ion-input required type="password" name="pass" [(ngModel)]="usuario.password"></ion-input>
     </ion-item>
-    <ion-button expand="full" color="primary" type="submit" [disabled]="form.invalid" class="ion-margin-top">
+    <ion-button expand="full" color="success" type="submit" [disabled]="form.invalid" class="ion-margin-top">
       Login
     </ion-button>
   </form>
+  <p class="ion-text-center">¿No tienes cuenta?</p>
   <ion-text color="primary" class="ion-text-center" routerLink="/registro">
-    <p>Crear Cuenta</p>
+    <p class="bold">Crear Cuenta</p>
   </ion-text>
 </ion-content>
+<ion-footer>SISTEMA DE ASISTENCIA</ion-footer>

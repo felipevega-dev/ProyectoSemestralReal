@@ -11,7 +11,7 @@ export class QRPage implements OnDestroy {
   qrString = 'Asistencia Registrada Correctamente'
   scanResult: any;
   content_visibility = '';
-
+  
   constructor() { }
 
   async checkPermission(){
