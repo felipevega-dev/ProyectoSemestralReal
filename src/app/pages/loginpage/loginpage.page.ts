@@ -40,7 +40,7 @@ export class LoginpagePage implements OnInit {
       if(this.usuario.username == this.registrado.username && this.usuario.password == this.registrado.password)
       {
         //localStorage.setItem('ingresado','true');
-        await this.storage.set('session',this.registrado.username);
+        await this.storage.set('sesion',this.registrado.username);
         console.log("datos correctos, pase")
         this.router.navigate(["/home"]);
         LoginpagePage.Susuario = this.usuario.username;
