@@ -21,11 +21,13 @@ const routes: Routes = [
   },
   {
     path: 'listas',
-    loadChildren: () => import('./pages/listas/listas.module').then( m => m.ListasPageModule)
+    loadChildren: () => import('./pages/listas/listas.module').then( m => m.ListasPageModule),
+    canActivate:[AutorizarGuard]
   },
   {
     path: 'scaner',
-    loadChildren: () => import('./pages/scaner/scaner.module').then( m => m.ScanerPageModule)
+    loadChildren: () => import('./pages/scaner/scaner.module').then( m => m.ScanerPageModule),
+    canActivate:[AutorizarGuard]
   },
   {
     path: 'contra',
@@ -37,19 +39,23 @@ const routes: Routes = [
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate:[AutorizarGuard]
   },
   {
     path: 'noticia1',
-    loadChildren: () => import('./pages/noticias/noticia1/noticia1.module').then( m => m.Noticia1PageModule)
+    loadChildren: () => import('./pages/noticias/noticia1/noticia1.module').then( m => m.Noticia1PageModule),
+    canActivate:[AutorizarGuard]
   },
   {
     path: 'noticia2',
-    loadChildren: () => import('./pages/noticias/noticia2/noticia2.module').then( m => m.Noticia2PageModule)
+    loadChildren: () => import('./pages/noticias/noticia2/noticia2.module').then( m => m.Noticia2PageModule),
+    canActivate:[AutorizarGuard]
   },
   {
     path: 'asistencia',
-    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
+    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule),
+    canActivate:[AutorizarGuard]
   },
 
 

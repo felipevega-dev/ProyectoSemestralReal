@@ -34,11 +34,11 @@ export class HomePage {
 
   cerrarSesion() {
     this.logout();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/loginpage"]);
   }
 
   async logout() {
-    await this.storage.set('session', null);
+    await this.storage.set('sesion', null);
   }
 
   verPerfil() {
@@ -59,11 +59,11 @@ export class HomePage {
   }
 
   async logear() {
-    this.registrado = await this.storage.get('session');
+    this.registrado = await this.storage.get('sesion');
   }
 
   async verUsuario(){
-    this.nombre= await this.storage.get('session');
+    this.nombre= await this.storage.get('sesion');
   }
 
 }

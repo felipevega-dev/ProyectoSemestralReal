@@ -11,12 +11,17 @@ export class AutorizarGuard implements CanActivate {
   
   constructor(private storage:Storage, private router:Router) { }
 
-  async autorizar () {let session=await this.storage.get('session')
-  if(session!=null){
-    return true;
-  }else{
-    this.router.navigate(['/login']);
-  }
+  async autorizar () 
+  {
+    let usr=await this.storage.get('sesion');
+    if(usr!=null)
+    {
+      return true;
+      
+    }else{
+      this.router.navigate(['/loginpage']);
+    }
+    return false;
 } 
 
   //varse = localStorage.getItem('ingresado')
@@ -24,9 +29,6 @@ export class AutorizarGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.autorizar){
-      return true;
-    }else
-      return false;
+    return this.autorizar();
   }
 }
