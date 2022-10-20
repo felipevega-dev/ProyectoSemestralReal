@@ -29,7 +29,7 @@ export class PerfilPage implements OnInit {
       state:{
       }
     }
-    this.router.navigate(['/qr'],navigationExtras)
+    this.router.navigate(['/asistencia'],navigationExtras)
     
     loading.present();
   }
