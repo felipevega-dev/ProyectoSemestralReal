@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { MenuController } from '@ionic/angular';
 import { AsistenciaService } from '../../services/asistencia.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-asistencia',
@@ -9,16 +10,18 @@ import { AsistenciaService } from '../../services/asistencia.service';
   styleUrls: ['./asistencia.page.scss'],
 })
 export class AsistenciaPage implements OnInit {
-
   listData = [];
-  fecha = Date.now();
+  fecha: String;
   nombre:String='';
-  constructor(private storage:Storage, private menu:MenuController, private asistenciaService:AsistenciaService) { 
+  constructor(private storage:Storage, private menu:MenuController, private asistenciaService:AsistenciaService, private router:Router) { 
     this.loadData();
   }
 
   ngOnInit() {
     this.verUsuario();
+    // para obtener la fecha actual y hora
+    this.fecha = new Date().toISOString();
+    
   }
 
   async verUsuario(){
@@ -34,13 +37,17 @@ export class AsistenciaPage implements OnInit {
   }
 
   async addData(){
-    await this.asistenciaService.addData(`Simon ${Math.floor(Math.random()* 100)}`);
+    await this.asistenciaService.addData(`ASISTENCIA REGISTRADA | FECHA: ${this.fecha}`);
     this.loadData();
   }
 
   async removeItem(index){
     this.asistenciaService.removeItem(index);
     this.listData.splice(index, 1);
+  }
+
+  verPerfil() {
+    this.router.navigate(["/perfil"]);
   }
 
 }

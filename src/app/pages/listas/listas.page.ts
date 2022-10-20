@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-listas',
@@ -8,10 +9,11 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./listas.page.scss'],
 })
 export class ListasPage implements OnInit {
-
-  constructor(private router:Router,private loadingCtrl: LoadingController) { }
+  nombre:String='';
+  constructor(private router:Router,private loadingCtrl: LoadingController, private storage:Storage) { }
 
   ngOnInit() {
+    this.verUsuario();
   }
 
   async showLoading() {
@@ -27,5 +29,13 @@ export class ListasPage implements OnInit {
     this.router.navigate(['/asistencia'],navigationExtras)
     
     loading.present();
+  }
+
+  async verUsuario(){
+    this.nombre= await this.storage.get('sesion');
+  }
+
+  verPerfil() {
+    this.router.navigate(["/perfil"]);
   }
 }

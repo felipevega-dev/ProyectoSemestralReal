@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-back-button text="volver" defaultHref="/home"></ion-back-button>
     </ion-buttons>
+    <ion-text slot="end" (click)="verPerfil()" ><h2>{{nombre}}</h2></ion-text>
     <ion-title>Asignaturas</ion-title>
+    <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
