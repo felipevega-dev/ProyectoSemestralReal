@@ -1,54 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Asistencia } from '../models/asistencias';
+import { Storage } from '@ionic/storage-angular';
+
+const STORAGE_KEY = 'mylist';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AsistenciaService {
 
-  asistencias: Asistencia[];
-
-  constructor() { 
-   this.asistencias = [
-     // {fecha: '13-10-2022', descripcion:'Jueves 13 de Octubre del 2022, a las 13:55PM', hide: true},
-      //{fecha: '07-10-2022', descripcion:'Viernes 7 de Octubre del 2022, a las 13:55PM', hide:true}
-    ];
+  constructor(private storage:Storage) { 
+    this.init();
   }
 
-  getAsistencias(){
-    if (localStorage.getItem('asistencias') == null){
-      return this.asistencias;
-    } else {
-      this.asistencias = JSON.parse(localStorage.getItem('asistencias'));
-      return this.asistencias;      
-    }
-    
+  async init(){
+    console.log('INIT');
+    await this.storage.create();
+    console.log('DONE');
   }
 
-  addAsistencias(asistencia: Asistencia){
-    this.asistencias.push(asistencia);
-    let asistencias = [];
-    if(localStorage.getItem('asistencias') == null){
-      asistencias.push(asistencia);
-      localStorage.setItem('asistencias', JSON.stringify(asistencias))  
-    }else{
-      asistencias = JSON.parse(localStorage.getItem('asistencias'));
-      asistencias.push(asistencia);
-      localStorage.setItem('asistencias', JSON.stringify(asistencias));
-    }
-    
-    
-   
+  getData(){
+    console.log('GET DATA');
+    return this.storage.get(STORAGE_KEY) || [];
   }
 
-  deleteAsistencias(asistencia:Asistencia){
-    for (let i = 0; i< this.asistencias.length; i++) {
-      if(asistencia == this.asistencias[i] ){
-        this.asistencias.splice(i,1);
-        localStorage.setItem('asistencias', JSON.stringify(this.asistencias));
-      }
-      
-    }
+  async addData(item){
+    const storedData = await this.storage.get(STORAGE_KEY) || [];
+    storedData.push(item);
+    return this.storage.set(STORAGE_KEY, storedData);
+  }
 
+  async removeItem(index){
+    const storedData = await this.storage.get(STORAGE_KEY) || [];
+    storedData.splice(index, 1);
+    return this.storage.set(STORAGE_KEY, storedData);
   }
 }

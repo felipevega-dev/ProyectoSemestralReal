@@ -28,8 +28,6 @@ export class HomePage {
 
   verMenu() {
     this.menu.open('first');
-
-
   }
 
   cerrarSesion() {

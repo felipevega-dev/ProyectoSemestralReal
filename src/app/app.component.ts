@@ -30,6 +30,6 @@ export class AppComponent {
   }
 
   async logout(){
-    await this.storage.set('session',null);
+    await this.storage.set('sesion',null);
   }
 }
