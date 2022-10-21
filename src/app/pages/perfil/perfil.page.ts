@@ -9,20 +9,25 @@ import { LoadingController, MenuController } from '@ionic/angular';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
-
+  nombre:String='';
   constructor(private menu:MenuController, private router:Router, private storage:Storage, private loadingCtrl:LoadingController) { }
 
   ngOnInit() {
+    this.verUsuario();
   }
 
   verMenu(){
     this.menu.open('first');
   }
 
+  async verUsuario(){
+    this.nombre= await this.storage.get('sesion');
+  }
+
   async showLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Accediendo a control de asistencia...',
-      duration: 2000,
+      message: 'Cargando asistencias',
+      duration: 1300,
     
     });
     let navigationExtras:NavigationExtras={
@@ -33,5 +38,21 @@ export class PerfilPage implements OnInit {
     
     loading.present();
   }
+
+  async showLoading2() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando asistencias',
+      duration: 1300,
+    
+    });
+    let navigationExtras:NavigationExtras={
+      state:{
+      }
+    }
+    this.router.navigate(['/asistencia2'],navigationExtras)
+    
+    loading.present();
+  }
+
   
 }

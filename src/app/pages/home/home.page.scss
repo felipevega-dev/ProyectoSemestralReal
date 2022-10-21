@@ -27,22 +27,20 @@
 }
 
 ion-toolbar{
-  background-color: var(--ion-color-azul);
+  background-color: rgb(17, 8, 65);
+  color:white;
 }
 
-ion-item{
-  background-color: var(--ion-color-azul-shade);
-}
 
 ion-card{
-  background-color: var(--ion-color-azul-tint);
+  background-color: rgb(26, 16, 83);
 }
 
 ion-card-content{
   color: white;
 }
 
-ion-content{ --ion-background-color:#ffffff; }
+ion-content{ --ion-background-color:#5db4eb; }
 
 .azul{
   color: blue;

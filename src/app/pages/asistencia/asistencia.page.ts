@@ -37,7 +37,7 @@ export class AsistenciaPage implements OnInit {
   }
 
   async addData(){
-    await this.asistenciaService.addData(`ASISTENCIA REGISTRADA | PRESENTE | BASE DE DATOS | FECHA: ${this.fecha}`);
+    await this.asistenciaService.addData(`PRG3121 | FECHA: ${this.fecha} | PRESENTE`);
     this.loadData();
   }
 

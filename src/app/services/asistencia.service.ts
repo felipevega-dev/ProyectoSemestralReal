@@ -13,6 +13,7 @@ export class AsistenciaService {
     this.init();
   }
 
+  //PROGRAMACION
   async init(){
     console.log('INIT');
     await this.storage.create();
@@ -37,7 +38,7 @@ export class AsistenciaService {
   }
 
 
-
+  // BASE DE DATOS
   async init2(){
     console.log('INIT');
     await this.storage.create();

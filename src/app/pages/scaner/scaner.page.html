@@ -1,21 +1,34 @@
 <ion-header>
   <ion-toolbar color="azul">
-    <ion-title>Scanner</ion-title>
+    <ion-title color="light">Registro de Asistencia</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button text="volver" defaultHref="/home"></ion-back-button>
+      <ion-back-button color="warning" text="volver" defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-    <ion-item color="light "class="ion-padding">
-      <img class="animate__animated animate__jello" src="/assets/scan.png"/>
-    </ion-item>
-  
-  <ion-button class="animate__animated animate__pulse ion-padding" expand="full" size="large">
-
-    <ion-icon name="show" slot="start"></ion-icon>
-    Iniciar Scanner
-  </ion-button>
+  <ion-card color="primary">
+    <ion-card-content class="ion-cla">
+      <ion-card-title class="ion-text-center">INSTRUCCIONES</ion-card-title>
+      <ion-card-subtitle class="ion-text-center"> * Para registrar su asistencia simplemente pinche el codigo QR de la asignatura</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+   
+<ion-card>
+ <ion-title>
+  <H3 class="ion-text-center ion-padding">BASE DE DATOS</H3>
+  <h4 color="success" class="ion-text-center">(PBD3123)</h4>
+ </ion-title>
+  <ion-img style="width: auto; height: 300px; display: block;" src="/assets/qr.webp" (click)="marcarAsistenciaDat()" (click)="addData()"></ion-img>
+  <br>
+</ion-card>
+  <ion-card>
+  <ion-title>
+  <H3 class="ion-text-center ion-padding">APLICACIONES MOVILES</H3>
+  <h4 color="success" class="ion-text-center">(PGY4123)</h4>
+ </ion-title>
+ <ion-img style="width: auto; height: 300px; display: block;" src="/assets/qr.webp" (click)="marcarAsistenciaMov()" (click)="addData2()"></ion-img>
+ <br>
+  </ion-card>
 </ion-content>

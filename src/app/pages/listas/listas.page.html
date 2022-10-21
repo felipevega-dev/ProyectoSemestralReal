@@ -1,19 +1,19 @@
 <ion-header>
   <ion-toolbar color="azul">
     <ion-buttons slot="start">
-      <ion-back-button text="volver" defaultHref="/home"></ion-back-button>
+      <ion-back-button text="volver" color="warning" defaultHref="/home"></ion-back-button>
     </ion-buttons>
     <ion-text slot="end" (click)="verPerfil()" ><h2>{{nombre}}</h2></ion-text>
-    <ion-title>Asignaturas</ion-title>
+    <ion-title color="light">Asignaturas</ion-title>
     <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" color="light">
-  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Base de datos']" >
+  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Prog. de Base de Datos (PBD3121)']" >
     <ion-item (click)="showLoading()">
       <ion-avatar slot="start">
-        <img src="/assets/book.png" />
+        <img src="/assets/progdatos.png" />
       </ion-avatar>
       <ion-label>
         <h2>{{item}}</h2>
@@ -22,15 +22,16 @@
   </ion-list>
 
 
-  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Programación Web']" >
+  <ion-list class="ver animate__animated animate__fadeInRight" *ngFor="let item of ['Prog. de App. Moviles (PGY4121)']" >
     <ion-item (click)="showLoading2()">
       <ion-avatar slot="start">
-        <img src="/assets/book.png" />
+        <img src="/assets/progmovil.png" />
       </ion-avatar>
       <ion-label>
         <h2>{{item}}</h2>
       </ion-label>
     </ion-item>
   </ion-list>
+</ion-content>
 
 

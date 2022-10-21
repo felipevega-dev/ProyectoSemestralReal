@@ -25,6 +25,8 @@ export class Asistencia2Page implements OnInit {
     
   }
 
+  
+
   async verUsuario(){
     this.nombre= await this.storage.get('sesion');
   }
@@ -38,7 +40,7 @@ export class Asistencia2Page implements OnInit {
   }
 
   async addData2(){
-    await this.asistenciaService.addData2(`ASISTENCIA REGISTRADA | PRESENTE | PROGRAMACIÓN WEB | FECHA: ${this.fecha}`);
+    await this.asistenciaService.addData2(`PGY4121 | FECHA:${this.fecha} | PRESENTE`);
     this.loadData2();
   }
 

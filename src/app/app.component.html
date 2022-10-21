@@ -2,7 +2,7 @@
   <ion-menu side="start" menuId="first" contentId="main">
     <ion-header>
       <ion-toolbar color="azul">
-        <ion-title>Menu</ion-title>
+        <ion-title color="light">Menu</ion-title>
         <ion-icon slot="end" name="close" size="large" class="ion-padding" (click)="cerrarMenu()"></ion-icon>
       </ion-toolbar>
     </ion-header>
@@ -18,7 +18,7 @@
         </ion-item>
         <ion-item color="celeste" detail routerLink="/scaner" (click)="cerrarMenu()">
           <ion-icon slot="start" name="scan-circle-outline"></ion-icon>
-          Scanner
+          Registro de Asistencia
         </ion-item>
         <ion-item color="celeste" detail routerLink="/loginpage" (click)="cerrarMenu()" (click)="cerrarSesion()">
           <ion-icon slot="start" name="log-out-outline"></ion-icon>

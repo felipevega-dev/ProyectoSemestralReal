@@ -1,13 +1,16 @@
 <ion-header>
   <ion-toolbar color="azul">
-    <ion-icon slot="start" name="menu" size="large" class="ion-padding" (click)="verMenu()"></ion-icon>
-    <ion-title>REGISTRO DE ASISTENCIA</ion-title>
-    <ion-text slot="end" (click)="verPerfil()" ><h2>{{nombre}}</h2></ion-text>
-    <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-back-button text="volver" color="warning" defaultHref="/listas"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="success">ASISTENCIA</ion-title>
+    <ion-avatar slot="end">
+      <img src="/assets/progmovil.png" />
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 <ion-content>
- <ion-list>
+ <ion-list class="animate__animated animate__fadeInRight">
   <ion-item-sliding *ngFor="let name of listData2; let i = index;">
     <ion-item>
       <ion-label>{{ name }}</ion-label>
@@ -26,3 +29,4 @@
 
 </ion-fab>
 </ion-content>
+<ion-footer class="ion-text-center">PORCENTAJE DE ASISTENCIA: 100%</ion-footer>
