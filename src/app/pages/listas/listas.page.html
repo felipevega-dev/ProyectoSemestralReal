@@ -10,16 +10,27 @@
 </ion-header>
 
 <ion-content class="ion-padding" color="light">
-  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Programación Web','Arquitectura','Calidad de Software','Inglés Intermedio','Programación de base de datos','Estadística Descriptiva','Proceso de Portafolio']" >
+  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Base de datos']" >
     <ion-item (click)="showLoading()">
       <ion-avatar slot="start">
         <img src="/assets/book.png" />
       </ion-avatar>
       <ion-label>
         <h2>{{item}}</h2>
-
       </ion-label>
     </ion-item>
   </ion-list>
 
-</ion-content>
+
+  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Programación Web']" >
+    <ion-item (click)="showLoading2()">
+      <ion-avatar slot="start">
+        <img src="/assets/book.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+

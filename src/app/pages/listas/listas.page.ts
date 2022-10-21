@@ -31,6 +31,21 @@ export class ListasPage implements OnInit {
     loading.present();
   }
 
+  async showLoading2() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando asistencias',
+      duration: 1300,
+    
+    });
+    let navigationExtras:NavigationExtras={
+      state:{
+      }
+    }
+    this.router.navigate(['/asistencia2'],navigationExtras)
+    
+    loading.present();
+  }
+
   async verUsuario(){
     this.nombre= await this.storage.get('sesion');
   }

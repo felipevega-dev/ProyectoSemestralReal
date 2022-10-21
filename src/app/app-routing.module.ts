@@ -56,7 +56,15 @@ const routes: Routes = [
     path: 'asistencia',
     loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule),
     canActivate:[AutorizarGuard]
+  },  {
+    path: 'asistencia2',
+    loadChildren: () => import('./pages/asistencia2/asistencia2.module').then( m => m.Asistencia2PageModule)
   },
+  {
+    path: 'asistencia2',
+    loadChildren: () => import('./pages/asistencia2/asistencia2.module').then( m => m.Asistencia2PageModule)
+  },
+
 
 
 
