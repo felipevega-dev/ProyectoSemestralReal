@@ -11,12 +11,10 @@ install! 'cocoapods', :disable_input_output_paths => true
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
-  pod 'CapacitorCommunityBarcodeScanner', :path => '..\..\node_modules\@capacitor-community\barcode-scanner'
   pod 'CapacitorApp', :path => '..\..\node_modules\@capacitor\app'
   pod 'CapacitorHaptics', :path => '..\..\node_modules\@capacitor\haptics'
   pod 'CapacitorKeyboard', :path => '..\..\node_modules\@capacitor\keyboard'
   pod 'CapacitorStatusBar', :path => '..\..\node_modules\@capacitor\status-bar'
-  pod 'DutchconceptsCapacitorBarcodeScanner', :path => '..\..\node_modules\@dutchconcepts\capacitor-barcode-scanner'
 end
 
 target 'App' do

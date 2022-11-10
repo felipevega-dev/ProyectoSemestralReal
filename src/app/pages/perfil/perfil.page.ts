@@ -9,11 +9,13 @@ import { LoadingController, MenuController } from '@ionic/angular';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+  correo:String='';
   nombre:String='';
   constructor(private menu:MenuController, private router:Router, private storage:Storage, private loadingCtrl:LoadingController) { }
 
   ngOnInit() {
     this.verUsuario();
+    this.verCorreo();
   }
 
   verMenu(){
@@ -22,6 +24,10 @@ export class PerfilPage implements OnInit {
 
   async verUsuario(){
     this.nombre= await this.storage.get('sesion');
+  }
+
+  async verCorreo(){
+    this.correo = await this.storage.get('correo');
   }
 
   async showLoading() {
@@ -53,6 +59,8 @@ export class PerfilPage implements OnInit {
     
     loading.present();
   }
+
+
 
   
 }
