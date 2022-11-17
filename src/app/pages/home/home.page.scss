@@ -31,18 +31,22 @@ ion-toolbar{
   color:white;
 }
 
-
-ion-card{
-  background-color: rgb(26, 16, 83);
-}
-
-ion-card-content{
-  color: white;
-}
-
 ion-content{ --ion-background-color:#5db4eb; }
 
 .azul{
   color: blue;
   font-weight: bold;
 }
+
+ion-card{
+  background-color: rgb(26, 16, 83);
+}
+
+ion-card-title{
+  color: rgb(230, 219, 9);
+}
+
+ion-card-content{
+  color: white;
+}
+
