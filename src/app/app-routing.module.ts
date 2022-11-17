@@ -61,7 +61,11 @@ const routes: Routes = [
     path: 'asistencia2',
     loadChildren: () => import('./pages/asistencia2/asistencia2.module').then( m => m.Asistencia2PageModule),
     canActivate:[AutorizarGuard]
+  },  {
+    path: 'formcontra',
+    loadChildren: () => import('./pages/formcontra/formcontra.module').then( m => m.FormcontraPageModule)
   },
+
   
 
 ];
