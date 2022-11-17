@@ -20,7 +20,7 @@ export class ContraPage implements OnInit {
   
     async showLoading() {
       const loading = await this.loadingCtrl.create({
-        message: 'Se ha modificado la contraseña exitosamente',
+        message: 'Se ha enviado un correo para cambiar la contraseña',
         duration: 2000,
       });
       loading.present();
@@ -34,9 +34,8 @@ export class ContraPage implements OnInit {
       let usr= await this.storage.get(this.usuario.username)
       if(this.usuario.username== usr.username && this.usuario.correo==usr.correo)
       {
-        await this.storage.set(this.usuario.username, this.usuario);
         this.showLoading()
-        this.router.navigate(['/loginpage'])
+        this.router.navigate(['/formcontra'])
       }
       else{
         this.presentAlert();

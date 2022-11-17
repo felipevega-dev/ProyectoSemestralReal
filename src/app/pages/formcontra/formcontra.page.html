@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="azul">
+    <ion-icon slot="start" name="person" size="large" class="ion-padding"></ion-icon>
+    <ion-title>DUOC UC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="tertiary" class="ion-padding">
+  <ion-text color="primary">
+    <h4 class="bold"> Cambiar contraseña</h4>
+  </ion-text>
+
+  <form  #form="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item color="primary">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input required type="password" name="pass" [(ngModel)]="usuario.password"></ion-input>
+    </ion-item>
+    <ion-button expand="full" color="success" type="submit" [disabled]="form.invalid" class="ion-margin-top">
+      Cambiar contraseña
+    </ion-button>
+  </form>
