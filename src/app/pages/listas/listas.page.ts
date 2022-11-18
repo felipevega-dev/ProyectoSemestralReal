@@ -16,9 +16,19 @@ export class ListasPage implements OnInit {
     this.verUsuario();
   }
 
+  async verUsuario(){
+    this.nombre= await this.storage.get('sesion');
+  }
+
+  verPerfil() {
+    this.router.navigate(["/perfil"]);
+  }
+
+  //LISTAS
+
   async showLoading() {
     const loading = await this.loadingCtrl.create({
-      message: 'Cargando asistencias',
+      message: 'Cargando lista de asistencias (PBD3121)',
       duration: 1300,
     
     });
@@ -33,7 +43,7 @@ export class ListasPage implements OnInit {
 
   async showLoading2() {
     const loading = await this.loadingCtrl.create({
-      message: 'Cargando asistencias',
+      message: 'Cargando lista de asistencias (PGY4121)',
       duration: 1300,
     
     });
@@ -45,12 +55,32 @@ export class ListasPage implements OnInit {
     
     loading.present();
   }
-
-  async verUsuario(){
-    this.nombre= await this.storage.get('sesion');
+  async showLoading3() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando lista de asistencias (CSY4121)',
+      duration: 1300,
+    
+    });
+    let navigationExtras:NavigationExtras={
+      state:{
+      }
+    }
+    this.router.navigate(['/asistencia3'],navigationExtras)
+    
+    loading.present();
   }
-
-  verPerfil() {
-    this.router.navigate(["/perfil"]);
+  async showLoading4() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando lista de asistencias (ASY4131)',
+      duration: 1300,
+    
+    });
+    let navigationExtras:NavigationExtras={
+      state:{
+      }
+    }
+    this.router.navigate(['/asistencia4'],navigationExtras)
+    
+    loading.present();
   }
 }

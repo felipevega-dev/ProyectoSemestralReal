@@ -56,7 +56,7 @@
   --ion-color-dark-rgb: 34, 36, 40;
   --ion-color-dark-contrast: #ffffff;
   --ion-color-dark-contrast-rgb: 255, 255, 255;
-  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-shade: hsl(216, 8%, 13%);
   --ion-color-dark-tint: #383a3e;
 
   /** medium **/
@@ -76,7 +76,7 @@
   --ion-color-light-tint: #f5f6f9;
 
   .alert-title.sc-ion-alert-md {
-    color: #b32224;
+    color: #ffffff;
     text-align: center;
   }
 
@@ -89,7 +89,7 @@
     text-align: center;
   }
   .alert-button{
-    color:rgb(0, 0, 0);
+    color:rgb(68, 223, 33);
     text-align: center;
   }
 }

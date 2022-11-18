@@ -68,6 +68,35 @@ export class PerfilPage implements OnInit {
     loading.present();
   }
 
+  async showLoading3() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando lista de asistencias (CSY4121)',
+      duration: 1300,
+    
+    });
+    let navigationExtras:NavigationExtras={
+      state:{
+      }
+    }
+    this.router.navigate(['/asistencia3'],navigationExtras)
+    
+    loading.present();
+  }
+  async showLoading4() {
+    const loading = await this.loadingCtrl.create({
+      message: 'Cargando lista de asistencias (ASY4131)',
+      duration: 1300,
+    
+    });
+    let navigationExtras:NavigationExtras={
+      state:{
+      }
+    }
+    this.router.navigate(['/asistencia4'],navigationExtras)
+    
+    loading.present();
+  }
+
   async cargarReset(){
     const loading = await this.loadingCtrl.create({
       message: 'DIRIGIENDO A LA VENTANA DE CAMBIO DE CONTRASEÑA...',

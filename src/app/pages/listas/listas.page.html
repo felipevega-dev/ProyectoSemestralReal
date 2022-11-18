@@ -32,6 +32,28 @@
       </ion-label>
     </ion-item>
   </ion-list>
+
+  <ion-list class="red animate__animated animate__fadeInRight" *ngFor="let item of ['Calidad de Software (CSY4111)']" >
+    <ion-item (click)="showLoading3()">
+      <ion-avatar slot="start">
+        <img src="/assets/software.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="yel animate__animated animate__fadeInRight" *ngFor="let item of ['Arquitectura (ASY4131)']" >
+    <ion-item (click)="showLoading4()">
+      <ion-avatar slot="start">
+        <img src="/assets/arquitectura.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 

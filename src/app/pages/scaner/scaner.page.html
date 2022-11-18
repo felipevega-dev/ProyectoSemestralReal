@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar color="azul">
-    <ion-title color="light">Registro de Asistencia</ion-title>
+    <ion-title color="light">REG.ASISTENCIA</ion-title>
     <ion-buttons slot="start">
       <ion-back-button color="warning" text="volver" defaultHref="/home"></ion-back-button>
     </ion-buttons>
@@ -15,20 +15,32 @@
     </ion-card-content>
   </ion-card>
    
-<ion-card>
- <ion-title>
-  <H3 class="ion-text-center ion-padding">BASE DE DATOS</H3>
-  <h4 color="success" class="ion-text-center">(PBD3123)</h4>
- </ion-title>
-  <ion-img style="width: auto; height: 300px; display: block;" src="/assets/qr.webp" (click)="marcarAsistenciaDat()" (click)="addData()"></ion-img>
-  <br>
-</ion-card>
-  <ion-card>
-  <ion-title>
-  <H3 class="ion-text-center ion-padding">APLICACIONES MOVILES</H3>
-  <h4 color="success" class="ion-text-center">(PGY4123)</h4>
- </ion-title>
- <ion-img style="width: auto; height: 300px; display: block;" src="/assets/qr.webp" (click)="marcarAsistenciaMov()" (click)="addData2()"></ion-img>
- <br>
-  </ion-card>
+  <ion-title class="ion-text-center"><h2>ASIGNATURAS</h2></ion-title>
+  <div class="centrar-flex">
+    <ion-card color= "primary" class="carta primary">
+      <ion-img class="imagen-qr" src="/assets/qr.webp" (click)="marcarAsistenciaDat()" (click)="addData()"></ion-img>
+      <ion-card-title class="ion-text-center">BASE DE DATOS</ion-card-title>
+      <ion-card-subtitle class="ion-text-center">BD1200</ion-card-subtitle>
+      <ion-img class="logo" src="/assets/progdatos.png"></ion-img>
+    </ion-card>
+    <ion-card color= "success" class="carta success">
+      <ion-img class="imagen-qr" src="/assets/qr.webp" (click)="marcarAsistenciaMov()" (click)="addData2()"></ion-img>
+      <ion-card-title class="ion-text-center">PROG.MOVIL</ion-card-title>
+      <ion-card-subtitle class="ion-text-center">PGY100</ion-card-subtitle>
+      <ion-img class="logo" src="/assets/progmovil.png"></ion-img>
+      </ion-card>
+    <ion-card color= "danger" class="carta">
+      <ion-img class="imagen-qr" src="/assets/qr.webp" (click)="marcarAsistenciaCal()" (click)="addData3()"></ion-img>
+      <ion-card-title class="ion-text-center">CALIDAD.SW</ion-card-title>
+      <ion-card-subtitle class="ion-text-center">CAL4111</ion-card-subtitle>
+      <ion-img class="logo" src="/assets/software.png"></ion-img>
+    </ion-card>
+    <ion-card color="warning" class="carta ">
+      <ion-img class="imagen-qr" src="/assets/qr.webp" (click)="marcarAsistenciaArq()" (click)="addData4()"></ion-img>
+      <ion-card-title class="ion-text-center">ARQUITECTURA</ion-card-title>
+      <ion-card-subtitle class="ion-text-center">ASY4141</ion-card-subtitle>
+      <ion-img class="logo" src="/assets/arquitectura.png"></ion-img>
+    </ion-card>
+  </div>
+
 </ion-content>
