@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { AsistenciaService } from 'src/app/services/asistencia.service';
 import { Storage } from '@ionic/storage-angular';
-import { Asistencia2Page } from '../asistencia2/asistencia2.page';
+import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 
 
 @Component({
@@ -11,13 +11,14 @@ import { Asistencia2Page } from '../asistencia2/asistencia2.page';
   templateUrl: './scaner.page.html',
   styleUrls: ['./scaner.page.scss'],
 })
-export class ScanerPage implements OnInit {
+export class ScanerPage implements OnInit,OnDestroy {
   listData1 = [];
   listData2 = [];
   listData3 = [];
   listData4 = [];
   fecha: String;
   nombre:String='';
+  scannedResult: any;
   constructor(private router:Router, private asistenciaService: AsistenciaService, 
     private alertController:AlertController, private storage: Storage) {
       this.loadData2();
@@ -29,6 +30,62 @@ export class ScanerPage implements OnInit {
     // para obtener la fecha actual y hora
     this.fecha = new Date().toISOString();
   }
+
+  ngOnDestroy(): void {
+      this.stopScan();
+  }
+
+
+
+  //BARCODE SCANNER //
+
+  async checkPermission(){
+    try{
+    // check or request permission
+    const status = await BarcodeScanner.checkPermission({ force: true });
+  
+    if (status.granted) {
+      // the user granted permission
+      return true;
+      }
+      return false;
+    } catch (e){
+      console.log(e);
+    };
+  }
+
+  async startScan(){
+    try{
+      const permission = await this.checkPermission();
+      if(!permission){
+        return;
+      }
+      await BarcodeScanner.hideBackground();
+      document.querySelector('body').classList.add('scanner-active')
+      const result = await BarcodeScanner.startScan();
+      console.log(result);
+      if(result?.hasContent) {
+        this.scannedResult = result.content;
+        BarcodeScanner.showBackground();
+        document.querySelector('body').classList.remove('scanner-active');
+        console.log(this.scannedResult);
+      }
+    } catch (e) {
+      console.log(e)
+      this.stopScan();
+    }
+  }
+
+  stopScan(){
+    BarcodeScanner.showBackground();
+    BarcodeScanner.stopScan();
+    document.querySelector('body').classList.remove('scanner-active');
+  }
+
+
+
+
+  // ALERTAS //
 
   async verInstrucciones(){
     const alert = await this.alertController.create({
@@ -89,6 +146,7 @@ export class ScanerPage implements OnInit {
     this.nombre= await this.storage.get('sesion');
   }
 
+  // AÑADIR DATA LOCAL STORAGE
   async addData(){
     await this.asistenciaService.addData(`PBD3121 | FECHA:${this.fecha} | PRESENTE`);
     this.loadData();

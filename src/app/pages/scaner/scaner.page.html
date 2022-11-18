@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="azul">
+  <ion-toolbar color="dark">
     <ion-title color="light">REG.ASISTENCIA</ion-title>
     <ion-buttons slot="start">
       <ion-back-button color="warning" text="volver" defaultHref="/home"></ion-back-button>
@@ -8,11 +8,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-card color="primary">
-    <ion-card-content class="ion-cla">
-      <ion-card-title class="ion-text-center">INSTRUCCIONES</ion-card-title>
-      <ion-card-subtitle class="ion-text-center"> * Para registrar su asistencia simplemente pinche el codigo QR de la asignatura</ion-card-subtitle>
-    </ion-card-content>
+  <ion-card color="light">
+    <ion-button expand="block" class="ion-margin" (click)="startScan()">ACTIVAR SCANNER</ion-button>
   </ion-card>
    
   <ion-title class="ion-text-center"><h2>ASIGNATURAS</h2></ion-title>
