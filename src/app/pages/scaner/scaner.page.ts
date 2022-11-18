@@ -19,9 +19,11 @@ export class ScanerPage implements OnInit,OnDestroy {
   fecha: String;
   nombre:String='';
   scannedResult: any;
+  content_visibility = '';
+
   constructor(private router:Router, private asistenciaService: AsistenciaService, 
     private alertController:AlertController, private storage: Storage) {
-      this.loadData2();
+    
     }
   
   ngOnInit() {
@@ -31,55 +33,53 @@ export class ScanerPage implements OnInit,OnDestroy {
     this.fecha = new Date().toISOString();
   }
 
-  ngOnDestroy(): void {
-      this.stopScan();
-  }
-
-
 
   //BARCODE SCANNER //
 
-  async checkPermission(){
-    try{
-    // check or request permission
-    const status = await BarcodeScanner.checkPermission({ force: true });
-  
-    if (status.granted) {
-      // the user granted permission
-      return true;
+  async checkPermission() {
+    try {
+      // check or request permission
+      const status = await BarcodeScanner.checkPermission({ force: true });
+      if (status.granted) {
+        // the user granted permission
+        return true;
       }
       return false;
-    } catch (e){
+    } catch(e) {
       console.log(e);
-    };
+    }
   }
 
-  async startScan(){
-    try{
+  async startScan() {
+    try {
       const permission = await this.checkPermission();
-      if(!permission){
+      if(!permission) {
         return;
       }
       await BarcodeScanner.hideBackground();
-      document.querySelector('body').classList.add('scanner-active')
+      document.querySelector('body').classList.add('scanner-active');
+      this.content_visibility = 'hidden';
       const result = await BarcodeScanner.startScan();
       console.log(result);
+      BarcodeScanner.showBackground();
+      document.querySelector('body').classList.remove('scanner-active');
+      this.content_visibility = '';
       if(result?.hasContent) {
         this.scannedResult = result.content;
-        BarcodeScanner.showBackground();
-        document.querySelector('body').classList.remove('scanner-active');
+        const claseJSON = JSON.parse(this.scannedResult);
         console.log(this.scannedResult);
       }
-    } catch (e) {
-      console.log(e)
+    } catch(e) {
+      console.log(e);
       this.stopScan();
     }
   }
 
-  stopScan(){
+  stopScan() {
     BarcodeScanner.showBackground();
     BarcodeScanner.stopScan();
     document.querySelector('body').classList.remove('scanner-active');
+    this.content_visibility = '';
   }
 
 
@@ -182,4 +182,9 @@ export class ScanerPage implements OnInit,OnDestroy {
   async loadData4(){
     this.listData4 = await this.asistenciaService.getData4();
   }
+
+  ngOnDestroy(): void {
+    this.stopScan();
+}
+
 }

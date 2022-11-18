@@ -1,16 +1,15 @@
 .celeste{
-    background-color: var(--ion-color-celeste);
+    color: cyan;
 }
 
-ion-icon{
-    color: rgb(11, 11, 119);
+.bgblack{
+    background: black;
 }
 
 ion-item.selected{
-    color: var(--ion-color-azul);
+    color: rgba($color: #335470, $alpha: 1.0)
 }
 
-ion-content{ --ion-background-color:#114f92; }
 
 ion-list{
     background-color: rgb(101, 178, 245);
