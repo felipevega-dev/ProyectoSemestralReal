@@ -2,6 +2,7 @@ import { Storage } from '@ionic/storage-angular';
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { LoadingController, MenuController } from '@ionic/angular';
+import { Usuario } from 'src/app/interfaces/usuario';
 
 @Component({
   selector: 'app-perfil',
@@ -11,6 +12,13 @@ import { LoadingController, MenuController } from '@ionic/angular';
 export class PerfilPage implements OnInit {
   correo:String='';
   nombre:String='';
+
+  usuario: Usuario = {
+    username: '',
+    password: '',
+    correo: ''
+  }
+
   constructor(private menu:MenuController, private router:Router, private storage:Storage, private loadingCtrl:LoadingController) { }
 
   ngOnInit() {
@@ -27,7 +35,7 @@ export class PerfilPage implements OnInit {
   }
 
   async verCorreo(){
-    this.correo = await this.storage.get('correo');
+    this.correo = await this.storage.get('usuario.correo');
   }
 
   async showLoading() {
@@ -56,6 +64,21 @@ export class PerfilPage implements OnInit {
       }
     }
     this.router.navigate(['/asistencia2'],navigationExtras)
+    
+    loading.present();
+  }
+
+  async cargarReset(){
+    const loading = await this.loadingCtrl.create({
+      message: 'DIRIGIENDO A LA VENTANA DE CAMBIO DE CONTRASEÑA...',
+      duration: 1300,
+    
+    });
+    let navigationExtras:NavigationExtras={
+      state:{
+      }
+    }
+    this.router.navigate(['/contra'],navigationExtras)
     
     loading.present();
   }

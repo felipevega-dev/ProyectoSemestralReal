@@ -26,12 +26,8 @@
     text-decoration: none;
   }
   
-  ion-item{
-    background-color: rgb(17, 8, 65);
-  }
-  
   ion-card{
-    background-color: rgb(17, 8, 65);
+    background-color: rgb(43, 45, 58);
   }
   
   ion-card-content{
@@ -41,7 +37,12 @@
     color: black;
   }
   
-
+  ion-button{
+    background:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    text-shadow: 1rem;
+    text-transform: capitalize;
+  }
   
   ion-card-title{
     text-align: center;
