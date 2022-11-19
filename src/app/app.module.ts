@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AsistenciaService } from './services/asistencia.service';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,8 @@ import { AsistenciaService } from './services/asistencia.service';
     HttpClientModule, 
     IonicStorageModule.forRoot({
       name: "mydatabase"}),],
-  providers: [AsistenciaService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy, }] ,
+  providers: [AsistenciaService,{ provide: RouteReuseStrategy, 
+    useClass: IonicRouteStrategy, }, BarcodeScanner] ,
   bootstrap: [AppComponent],
 })
 export class AppModule {}

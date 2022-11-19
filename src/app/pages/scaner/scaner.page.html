@@ -7,17 +7,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [style.visibility]="content_visibility">
+<ion-content [fullscreen]="true">
   <ion-card color="light">
     <ion-button
      expand="block" 
      class="ion-margin" 
-     (click)="startScan()">
+     fill="clear"
+     shape="around"
+     (click)="scan()">
      ACTIVAR SCANNER</ion-button>
   </ion-card>
-  <ion-item *ngIf="scannedResult">
-    <ion-label class="ion-text-wrap"> Scanned Result: {{scannedResult}}</ion-label>
-  </ion-item>
    
   <ion-title class="ion-text-center"><h2>ASIGNATURAS</h2></ion-title>
   <div class="centrar-flex">

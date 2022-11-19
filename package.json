@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@awesome-cordova-plugins/barcode-scanner": "^6.2.0",
     "@capacitor-community/barcode-scanner": "^3.0.0",
     "@capacitor/android": "4.1.0",
     "@capacitor/app": "4.0.1",
@@ -33,6 +34,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.2",
     "ionicons": "^6.0.3",
+    "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

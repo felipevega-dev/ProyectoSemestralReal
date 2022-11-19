@@ -3,6 +3,7 @@ import { AlertController, LoadingController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { AsistenciaService } from 'src/app/services/asistencia.service';
 import { Storage } from '@ionic/storage-angular';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class ScanerPage implements OnInit{
   nombre:String='';
 
   constructor(private router:Router, private asistenciaService: AsistenciaService, 
-    private alertController:AlertController, private storage: Storage) {
+    private alertController:AlertController, private storage: Storage, private barcodeScanner: BarcodeScanner) {
     
     }
   
@@ -33,7 +34,15 @@ export class ScanerPage implements OnInit{
 
   //BARCODE SCANNER //
 
-
+  scan()
+  {
+    this.barcodeScanner.scan().then(barcodeData => {
+      console.log('Barcode data', barcodeData);
+      /*barcodeData es lo que lee del QR*/
+     }).catch(err => {
+         console.log('Error', err);
+     });
+  }
 
 
 
