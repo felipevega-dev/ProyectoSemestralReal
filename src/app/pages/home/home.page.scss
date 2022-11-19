@@ -31,22 +31,57 @@ ion-toolbar{
   color:white;
 }
 
-ion-content{ --ion-background-color:#5db4eb; }
+ion-content{ --ion-background-color:#f8f8f8; }
 
 .azul{
-  color: blue;
-  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  font-style: bold;
 }
 
-ion-card{
-  background-color: rgb(26, 16, 83);
+.titulo{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  font-style: bold;
+  font-weight: 100;
 }
 
 ion-card-title{
-  color: rgb(230, 219, 9);
+  color: rgb(255, 255, 255);
 }
 
 ion-card-content{
   color: white;
+}
+
+.logoduoc{
+  padding: 2rem;
+  height: auto;
+  width: auto;
+  
+
+}
+
+.carta{
+  width:175px;
+  height: 175px;
+  float: left;
+  box-shadow: 1rem;
+  padding: 0.5rem;
+}
+
+.logo2{
+  padding-left: 40px;
+  padding-top: 10px;
+  width: 130px;
+  height: 100px;
+}
+
+.logo{
+  width: 130px;
+  height: 100px;
+  padding-left: 25px;
+  
 }
 

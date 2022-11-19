@@ -50,6 +50,22 @@ export class HomePage {
   verNoticia2() {
     this.router.navigate(["/noticia2"]);
   }
+
+  verbd(){
+    this.router.navigate(["/asistencia"]);
+  }
+
+  verpm(){
+    this.router.navigate(["/asistencia2"]);
+  }
+
+  versw(){
+    this.router.navigate(["/asistencia3"]);
+  }
+
+  verAqr(){
+    this.router.navigate(["/asistencia4"]);
+  }
   
   ngOnInit() {
     this.verUsuario();
