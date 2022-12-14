@@ -2,6 +2,7 @@ import { Storage } from '@ionic/storage-angular';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-loginpage',
@@ -20,7 +21,7 @@ export class LoginpagePage implements OnInit {
   }
 
   static Susuario;
-  constructor(private router:Router, private storage:Storage) { }
+  constructor(private router:Router, private storage:Storage, private alertController: AlertController) { }
 
   ngOnInit() {
   }
@@ -47,11 +48,34 @@ export class LoginpagePage implements OnInit {
       }
       else{
         console.log("contraseña incorrecta")
+        this.contraseñaIncorrecta();
       }
     } 
     else{
       console.log("usuario no registrado")
+      this.usuarionoRegistrado();
     }
   }
 
+  async usuarionoRegistrado(){
+    const alert = await this.alertController.create({
+      header: 'ERROR',
+      subHeader: '¿Escribiste bien los datos?',
+      message: 'Usuario no registrado en el sistema',
+      buttons: ['Volver a intentar'],
+    });
+
+    await alert.present();
+  }
+
+  async contraseñaIncorrecta(){
+    const alert = await this.alertController.create({
+      header: 'ERROR',
+      subHeader: '¿Escribiste bien los datos?',
+      message: 'Usuario o Contraseña Incorrectas',
+      buttons: ['Volver a intentar'],
+    });
+
+    await alert.present();
+  }
 }

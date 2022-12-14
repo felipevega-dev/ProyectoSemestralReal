@@ -1,23 +1,59 @@
 <ion-header>
-  <ion-toolbar color="azul">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button text="volver" defaultHref="/home"></ion-back-button>
+      <ion-back-button text="volver" color="warning" defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Asignaturas</ion-title>
+    <ion-text slot="end" (click)="verPerfil()" color="light"><h2>{{nombre}}</h2></ion-text>
+    <ion-title color="light">Asignaturas</ion-title>
+    <ion-icon color="light"slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" color="light">
-  <ion-list class="animate__animated animate__fadeInRight" *ngFor="let item of ['Programación Web','Arquitectura','Calidad de Software','Inglés Intermedio','Programación de base de datos','Estadística Descriptiva','Proceso de Portafolio']" >
+  <ion-list class="blu animate__animated animate__fadeInRight" *ngFor="let item of ['Prog. de Base de Datos (PBD3121)']" >
     <ion-item (click)="showLoading()">
       <ion-avatar slot="start">
-        <img src="/assets/book.png" />
+        <img src="/assets/progdatos.png" />
       </ion-avatar>
       <ion-label>
         <h2>{{item}}</h2>
-
       </ion-label>
     </ion-item>
   </ion-list>
 
+
+  <ion-list class="ver animate__animated animate__fadeInRight" *ngFor="let item of ['Prog. de App. Moviles (PGY4121)']" >
+    <ion-item (click)="showLoading2()">
+      <ion-avatar slot="start">
+        <img src="/assets/progmovil.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="red animate__animated animate__fadeInRight" *ngFor="let item of ['Calidad de Software (CSY4111)']" >
+    <ion-item (click)="showLoading3()">
+      <ion-avatar slot="start">
+        <img src="/assets/software.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="yel animate__animated animate__fadeInRight" *ngFor="let item of ['Arquitectura (ASY4131)']" >
+    <ion-item (click)="showLoading4()">
+      <ion-avatar slot="start">
+        <img src="/assets/arquitectura.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+

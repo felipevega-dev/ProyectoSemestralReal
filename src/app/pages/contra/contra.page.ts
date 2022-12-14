@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import { Usuario } from 'src/app/interfaces/usuario';
 @Component({
   selector: 'app-contra',
   templateUrl: './contra.page.html',
@@ -9,46 +11,32 @@ import { AlertController } from '@ionic/angular';
 })
 export class ContraPage implements OnInit {
 
-  usuario={
+  usuario:Usuario={
     username:'',
+    password:'',
     correo:''
   }
-    constructor(private router:Router, private loadingCtrl: LoadingController, private alertController:AlertController) {}
+    constructor(private storage:Storage, private router:Router, private loadingCtrl: LoadingController, private alertController:AlertController) {}
   
     async showLoading() {
       const loading = await this.loadingCtrl.create({
-        message: 'Se ha enviado un correo para cambiar la contraseña',
+        message: 'Se ha modificado la contraseña exitosamente',
         duration: 2000,
-      
       });
-      let navigationExtras:NavigationExtras={
-        state:{
-        }
-      }
-      this.router.navigate(['/loginpage'],navigationExtras)
-      
       loading.present();
-  
     }
     
     ngOnInit() {
     }
     
-    
-    onSubmit()
+    async obtener()
     {
-      if(this.usuario.username=="waco" && this.usuario.correo=="waco@gmail.com")
+      let usr= await this.storage.get(this.usuario.username)
+      if(this.usuario.username== usr.username && this.usuario.correo==usr.correo)
       {
-        
-        let navigationExtras:NavigationExtras={
-          state:{
-            miusuario:this.usuario,
-            otracosa:'hola waldo'
-          }
-        }
+        await this.storage.set(this.usuario.username, this.usuario);
         this.showLoading()
-        this.router.navigate(['/loginpage'],navigationExtras)
-        console.log(navigationExtras);
+        this.router.navigate(['/loginpage'])
       }
       else{
         this.presentAlert();
@@ -86,4 +74,10 @@ export class ContraPage implements OnInit {
       const { role } = await alert.onDidDismiss();
       console.log(`Dismissed with role: ${role}`);
     }
-  }
+    
+    onSubmit()
+    {
+    this.obtener()
+    
+    }
+}

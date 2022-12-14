@@ -27,24 +27,61 @@
 }
 
 ion-toolbar{
-  background-color: var(--ion-color-azul);
+  background-color: rgb(17, 8, 65);
+  color:white;
 }
 
-ion-item{
-  background-color: var(--ion-color-azul-shade);
+ion-content{ --ion-background-color:#f8f8f8; }
+
+.azul{
+  color: rgb(255, 255, 255);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  font-style: bold;
 }
 
-ion-card{
-  background-color: var(--ion-color-azul-tint);
+.titulo{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  font-style: bold;
+  font-weight: 100;
+}
+
+ion-card-title{
+  color: rgb(255, 255, 255);
 }
 
 ion-card-content{
   color: white;
 }
 
-ion-content{ --ion-background-color:#ffffff; }
+.logoduoc{
+  padding: 2rem;
+  height: auto;
+  width: auto;
+  
 
-.azul{
-  color: blue;
-  font-weight: bold;
 }
+
+.carta{
+  width:175px;
+  height: 175px;
+  float: left;
+  box-shadow: 1rem;
+  padding: 0.5rem;
+}
+
+.logo2{
+  padding-left: 40px;
+  padding-top: 10px;
+  width: 130px;
+  height: 100px;
+}
+
+.logo{
+  width: 130px;
+  height: 100px;
+  padding-left: 25px;
+  
+}
+

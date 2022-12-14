@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AsistenciaFormComponent } from './asistencia-form.component';
+import { Asistencia2Page } from './asistencia2.page';
 
-describe('AsistenciaFormComponent', () => {
-  let component: AsistenciaFormComponent;
-  let fixture: ComponentFixture<AsistenciaFormComponent>;
+describe('Asistencia2Page', () => {
+  let component: Asistencia2Page;
+  let fixture: ComponentFixture<Asistencia2Page>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AsistenciaFormComponent ],
+      declarations: [ Asistencia2Page ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AsistenciaFormComponent);
+    fixture = TestBed.createComponent(Asistencia2Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

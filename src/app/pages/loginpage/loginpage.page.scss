@@ -1,34 +1,22 @@
 ion-toolbar{
-    background-color: var(--ion-color-azul);
+    background: rgb(17, 8, 65);
+    color:white;
 }
-
-ion-item{
-    background-color: var(--ion-color-azul);
-}
-
-ion-content{
-    background-color: whitesmoke;
-}
-
+  
 .bluex{
     background-color: rgb(24, 4, 121);
 }
 
 ion-footer{
-    background-color: var(--ion-color-azul);
+    background-color: rgb(17, 8, 65);
     text-align: center;
     text-decoration: solid;
     background-size: 400pc;
- 
+    color: rgb(255, 255, 255);
 }
 
 ion-label{
     text-align: center;
-}
-
-ion-title{
-    color: white;
-    font-weight: bold;
 }
 
 ion-icon{

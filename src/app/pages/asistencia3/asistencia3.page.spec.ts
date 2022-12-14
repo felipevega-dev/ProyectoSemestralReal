@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AsistenciaListComponent } from './asistencia-list.component';
+import { Asistencia3Page } from './asistencia3.page';
 
-describe('AsistenciaListComponent', () => {
-  let component: AsistenciaListComponent;
-  let fixture: ComponentFixture<AsistenciaListComponent>;
+describe('Asistencia3Page', () => {
+  let component: Asistencia3Page;
+  let fixture: ComponentFixture<Asistencia3Page>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AsistenciaListComponent ],
+      declarations: [ Asistencia3Page ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AsistenciaListComponent);
+    fixture = TestBed.createComponent(Asistencia3Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

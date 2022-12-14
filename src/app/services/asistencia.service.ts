@@ -1,54 +1,114 @@
 import { Injectable } from '@angular/core';
-import { Asistencia } from '../models/asistencias';
+import { Storage } from '@ionic/storage-angular';
+
+const STORAGE_KEY = 'mylist';
+const STORAGE_KEY2 = 'mylist2';
+const STORAGE_KEY3 = 'mylist3';
+const STORAGE_KEY4 = 'mylist4';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AsistenciaService {
 
-  asistencias: Asistencia[];
-
-  constructor() { 
-   this.asistencias = [
-     // {fecha: '13-10-2022', descripcion:'Jueves 13 de Octubre del 2022, a las 13:55PM', hide: true},
-      //{fecha: '07-10-2022', descripcion:'Viernes 7 de Octubre del 2022, a las 13:55PM', hide:true}
-    ];
+  constructor(private storage:Storage) { 
+    this.init();
   }
 
-  getAsistencias(){
-    if (localStorage.getItem('asistencias') == null){
-      return this.asistencias;
-    } else {
-      this.asistencias = JSON.parse(localStorage.getItem('asistencias'));
-      return this.asistencias;      
-    }
-    
+  //PROGRAMACION
+  async init(){
+    console.log('INIT');
+    await this.storage.create();
+    console.log('DONE');
   }
 
-  addAsistencias(asistencia: Asistencia){
-    this.asistencias.push(asistencia);
-    let asistencias = [];
-    if(localStorage.getItem('asistencias') == null){
-      asistencias.push(asistencia);
-      localStorage.setItem('asistencias', JSON.stringify(asistencias))  
-    }else{
-      asistencias = JSON.parse(localStorage.getItem('asistencias'));
-      asistencias.push(asistencia);
-      localStorage.setItem('asistencias', JSON.stringify(asistencias));
-    }
-    
-    
-   
+  getData(){
+    console.log('GET DATA');
+    return this.storage.get(STORAGE_KEY) || [];
   }
 
-  deleteAsistencias(asistencia:Asistencia){
-    for (let i = 0; i< this.asistencias.length; i++) {
-      if(asistencia == this.asistencias[i] ){
-        this.asistencias.splice(i,1);
-        localStorage.setItem('asistencias', JSON.stringify(this.asistencias));
-      }
-      
-    }
+  async addData(item){
+    const storedData = await this.storage.get(STORAGE_KEY) || [];
+    storedData.push(item);
+    return this.storage.set(STORAGE_KEY, storedData);
+  }
 
+  async removeItem(index){
+    const storedData = await this.storage.get(STORAGE_KEY) || [];
+    storedData.splice(index, 1);
+    return this.storage.set(STORAGE_KEY, storedData);
+  }
+
+
+  // BASE DE DATOS
+  async init2(){
+    console.log('INIT');
+    await this.storage.create();
+    console.log('DONE');
+  }
+
+  getData2(){
+    console.log('GET DATA');
+    return this.storage.get(STORAGE_KEY2) || [];
+  }
+
+  async addData2(item){
+    const storedData2 = await this.storage.get(STORAGE_KEY2) || [];
+    storedData2.push(item);
+    return this.storage.set(STORAGE_KEY2, storedData2);
+  }
+
+  async removeItem2(index){
+    const storedData2 = await this.storage.get(STORAGE_KEY2) || [];
+    storedData2.splice(index, 1);
+    return this.storage.set(STORAGE_KEY2, storedData2);
+  }
+
+  // CALIDAD SW
+  async init3(){
+    console.log('INIT');
+    await this.storage.create();
+    console.log('DONE');
+  }
+
+  getData3(){
+    console.log('GET DATA');
+    return this.storage.get(STORAGE_KEY3) || [];
+  }
+
+  async addData3(item){
+    const storedData3 = await this.storage.get(STORAGE_KEY3) || [];
+    storedData3.push(item);
+    return this.storage.set(STORAGE_KEY3, storedData3);
+  }
+
+  async removeItem3(index){
+    const storedData3 = await this.storage.get(STORAGE_KEY3) || [];
+    storedData3.splice(index, 1);
+    return this.storage.set(STORAGE_KEY3, storedData3);
+  }
+
+  // ARQUITECTURA
+  async init4(){
+    console.log('INIT');
+    await this.storage.create();
+    console.log('DONE');
+  }
+
+  getData4(){
+    console.log('GET DATA');
+    return this.storage.get(STORAGE_KEY4) || [];
+  }
+
+  async addData4(item){
+    const storedData4 = await this.storage.get(STORAGE_KEY4) || [];
+    storedData4.push(item);
+    return this.storage.set(STORAGE_KEY4, storedData4);
+  }
+
+  async removeItem4(index){
+    const storedData4 = await this.storage.get(STORAGE_KEY4) || [];
+    storedData4.splice(index, 1);
+    return this.storage.set(STORAGE_KEY4, storedData4);
   }
 }

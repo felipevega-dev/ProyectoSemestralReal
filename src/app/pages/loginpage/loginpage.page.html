@@ -1,21 +1,21 @@
 <ion-header>
-  <ion-toolbar color="azul">
+  <ion-toolbar color="primary">
     <ion-icon slot="start" name="person" size="large" class="ion-padding"></ion-icon>
     <ion-title>DUOC UC</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="tertiary" class="ion-padding">
-  <ion-text color="primary">
-    <h4 class="bold"> Inicio de Sesión</h4>
+<ion-content color="dark" class="ion-padding">
+  <ion-text color="light">
+    <h4 class="bold ion-text-center"> Inicio de Sesión</h4>
   </ion-text>
 
   <form  #form="ngForm" (ngSubmit)="onSubmit()">
-    <ion-item color="primary">
+    <ion-item>
       <ion-label position="floating">Usuario</ion-label>
       <ion-input required type="text" name="nombre" [(ngModel)]="usuario.username" ></ion-input>
     </ion-item>
-    <ion-item color="primary">
+    <ion-item>
       <ion-label position="floating">Password</ion-label>
       <ion-input required type="password" name="pass" [(ngModel)]="usuario.password"></ion-input>
     </ion-item>
@@ -24,8 +24,11 @@
     </ion-button>
   </form>
   <p class="ion-text-center">¿No tienes cuenta?</p>
-  <ion-text color="primary" class="ion-text-center" routerLink="/registro">
+  <ion-text color="light" class="ion-text-center" routerLink="/registro">
     <p class="bold">Crear Cuenta</p>
   </ion-text>
+  <ion-text color="light" class="ion-text-center" routerLink="/contra">
+    <p class="bold">Cambiar contraseña</p>
+  </ion-text>
 </ion-content>
-<ion-footer>SISTEMA DE ASISTENCIA</ion-footer>
+<ion-footer color="primary">SISTEMA DE ASISTENCIA</ion-footer>

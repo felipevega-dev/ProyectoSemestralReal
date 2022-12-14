@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { Usuario } from 'src/app/interfaces/usuario';
 
@@ -16,7 +17,7 @@ export class RegistroPage implements OnInit {
     correo:''
   }
 
-  constructor(private storage:Storage, private router:Router) { }
+  constructor(private storage:Storage, private router:Router, private alertController:AlertController) { }
 
   ngOnInit() {
   }
@@ -34,12 +35,35 @@ export class RegistroPage implements OnInit {
     {
       await this.storage.set(this.usuario.username, this.usuario);
       console.log("usuario registrado")
+      this.usuarioRegistradoCorrectamente();
       this.router.navigate(["/loginpage"])
     }
     else{
+      this.usuarioExistente();
       console.log("este usuario ya existe")
     }
     
   }
 
+  async usuarioRegistradoCorrectamente(){
+    const alert = await this.alertController.create({
+      header: 'EXITO',
+      subHeader: 'USUARIO REGISTRADO CORRECTAMENTE',
+      message: 'Ya puedes iniciar sesión en la aplicación!',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
+
+  async usuarioExistente(){
+    const alert = await this.alertController.create({
+      header: 'ERROR',
+      subHeader: 'USUARIO YA EXISTE',
+      message: 'El nombre de usuario que elegiste ya está en uso :(',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
 }

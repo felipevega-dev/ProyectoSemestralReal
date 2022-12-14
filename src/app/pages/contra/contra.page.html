@@ -10,19 +10,26 @@
 <ion-content color="light" class="ion-padding">
 
   <ion-text color="tertiary" class="ion-text-center ion-text-capitalize">
-    <h1 class="">Recuperar contraseña</h1>
+    <h1 class="">Cambiar Contraseña</h1>
   </ion-text>
   <form #frm="ngForm" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
       <ion-input required type="text" name="username" [(ngModel)]="usuario.username" clearInput></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label position="floating">Correo</ion-label>
       <ion-input required type="text" name="Correo" [(ngModel)]="usuario.correo"  clearInput></ion-input>
     </ion-item>
+    
+    <ion-item >
+      <ion-label position="floating">Nueva Password</ion-label>
+      <ion-input required type="password" name="pass" [(ngModel)]="usuario.password"></ion-input>
+    </ion-item>
+
     <ion-button class="animate__animated animate__pulse ion-padding" expand="block" color="warning" type="submit" [disabled]="frm.invalid" class="ion-margin-top" >
-      Recuperar
+      Cambiar Contraseña
     </ion-button>
   </form>
  
