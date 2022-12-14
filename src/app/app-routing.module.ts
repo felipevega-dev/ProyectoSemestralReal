@@ -61,7 +61,8 @@ const routes: Routes = [
     path: 'asistencia2',
     loadChildren: () => import('./pages/asistencia2/asistencia2.module').then( m => m.Asistencia2PageModule),
     canActivate:[AutorizarGuard]
-  },  {
+  },
+  {
     path: 'asistencia3',
     loadChildren: () => import('./pages/asistencia3/asistencia3.module').then( m => m.Asistencia3PageModule)
   },
@@ -82,4 +83,5 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

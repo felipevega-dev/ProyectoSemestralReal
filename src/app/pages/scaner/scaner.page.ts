@@ -11,6 +11,7 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
   templateUrl: './scaner.page.html',
   styleUrls: ['./scaner.page.scss'],
 })
+
 export class ScanerPage implements OnInit{
   listData1 = [];
   listData2 = [];
@@ -19,6 +20,7 @@ export class ScanerPage implements OnInit{
   fecha: String;
   nombre:String='';
 
+  code: any;
   constructor(private router:Router, private asistenciaService: AsistenciaService, 
     private alertController:AlertController, private storage: Storage, private barcodeScanner: BarcodeScanner) {
     
@@ -37,8 +39,21 @@ export class ScanerPage implements OnInit{
   scan()
   {
     this.barcodeScanner.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
+      this.code = barcodeData.text;
       /*barcodeData es lo que lee del QR*/
+
+      if (this.code = 'pbd3121') {
+          this.addData()
+      }
+      if (this.code = 'pgy4121') {
+        this.addData2()
+      }
+      if (this.code = 'csy4111') {
+        this.addData3()
+      }
+      if (this.code = 'asy4131') {
+        this.addData4()
+      }
      }).catch(err => {
          console.log('Error', err);
      });
